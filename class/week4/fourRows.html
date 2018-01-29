@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Four Rows</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+/*
+one row must be 12
+use position min 2 boxes and flexspace space-aroundint he 12 row at least use flex with multiple times
+choose a andTheNameHeretransparent background-color
+you could put a title row about your andTheNameHerelink to this one
+*/
+h1{
+  font-family: 'Press Start 2P';
+}
+    .container{
+      margin: 0 auto;
+      width: 600px;
+    }
+
+    .box{
+      height: 150px;
+      position: relative;
+    }
+
+    .longBox{
+      height:150px;
+      width: 600px;
+    }
+
+    .medBox{
+      width: 300;
+      height: 150;
+    }
+
+    .fitImage{
+      height: 100%;
+    }
+
+    .centeredBoi{ /*centering an image if the parent is relative*/
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /*HOW TO USE FLEX BOXES*/
+
+    .flex{ /*THIS IS THE PARENT CLASS THAT WILL ALLOW ITS CHILDREN TO CONFORM. flex always goes on the parent.*/
+      display: flex; /*you must define it as flex, otherwise it'll display as block*/
+      /*NEXT STEP: how will you want to center the item?*/
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flexSpaceBetween{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .flexSpaceAround{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    </style>
+  </head>
+  <body>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 flex"><h1>dangan pixels</h1></div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 box"><img class="centeredBoi" src="images/korekiyo.gif"/></div>
+        <div class="col-md-3 box"><img src="images/kiibo.gif" class="centeredBoi" /></div>
+        <div class="col-md-3 box flex"><img src="images/chihiro.gif"/></div>
+        <div class="col-md-3 box flex"><img src="images/mahiru.gif"/></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 longBox flexSpaceAround">
+          <img src="images/hinata.gif" />
+          <img src="images/kokichi.gif" />
+          <img src="images/kokichi.gif" />
+          <img src="images/kokichi.gif" />
+          <img src="images/kokichi.gif" />
+          <img src="images/kokichi.gif" />
+          <img src="images/kokichi.gif" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 box"><img class="centeredBoi" src="images/celestia.gif"/></div>
+        <div class="col-md-4 box"><img class="centeredBoi" src="images/rantaro.gif"/></div>
+        <div class="col-md-4 box"><img class="centeredBoi" src="images/shuichi.gif"/></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 medBox flexSpaceBetween">
+          <img src="images/angie.gif"/>
+          <img src="images/tenko.gif"/>
+          <img src="images/angie.gif"/>
+          <img src="images/tenko.gif"/>
+        </div>
+        <div class="col-md-6 medBox flexSpaceAround">
+          <img src="images/gonta.gif"/>
+          <img src="images/ibuki.gif"/>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+      //creating random colours
+      $(document).ready(function() {
+        //get a random color between 0 and 255
+        function getRandomColor() {
+          //math.floor rounds it down
+          return Math.floor(Math.random() * 255);
+        }
+        //assign variable randomColor with ALL the elements with the class called .randomColor
+        var randomColor = $(".randomColor");
+
+        //loop through all the elements.
+        // for each randomColor
+        $.each(randomColor, function(index, item) {
+          $(this).css("background-color", "RGB(" + getRandomColor() + "," + getRandomColor() + "," + getRandomColor() + ")");
+        })
+
+      })
+    </script>
+  </body>
+</html>

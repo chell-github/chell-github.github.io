@@ -1,27 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Week 4 - Javascript Start</title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 4 - Javascript Start!!</title>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  </body>
+
+  <style>
+    .height1 {
+      height: 50px;
+    }
+
+    .height2 {
+      height: 300px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!--CONTAINER - ROW - COL-MD-# -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 randomColor height1"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 randomColor height2"></div>
+      <div class="col-md-8 randomColor height2"></div>
+      <div class="col-md-2 randomColor height2"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 randomColor height1"></div>
+    </div>
+  </div>
+
+
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+  <script type="text/javascript">
+    //creating random colours
+    $(document).ready(function() {
+      //get a random color between 0 and 255
+      function getRandomColor() {
+        //math.floor rounds it down
+        return Math.floor(Math.random() * 255);
+      }
+      //assign variable randomColor with ALL the elements with the class called .randomColor
+      var randomColor = $(".randomColor");
+
+      //loop through all the elements.
+      // for each randomColor
+      $.each(randomColor, function(index, item) {
+        $(this).css("background-color", "RGB(" + getRandomColor() + "," + getRandomColor() + "," + getRandomColor() + ")");
+      })
+
+    })
+  </script>
+
+  <script type="text/javascript">
+
+/* ------------BUILT-IN FUNCTIONS AND USER-DEFINED FUNCTIONS.------------------
+    //a function is a part of a code. when you call a function, you make it go execute that part of the code.
+    //alert("my JS!"); //PARAMETER -> THE THING INSIDE THE BRACKETS. you can use single or double quotes. be consistent.
+    console.log("hewwo"); //some functions have subfunctions. in this case, .log is the subfunction.
+    //console.log and alert are types of built-in functions.
+    function myFirstFunction() { //FUNCTION DEFINITION -> to define a new function, you create the function by typing "function andTheNameHere({})"
+      //anything that is in the curly brackets here will rounds
+      console.log("this is from inside the function!!");
+    }
+    myFirstFunction(); //this CALLS the function. you can call it as many times as you want.
+    myFirstFunction(); //another call. you DEFINE IT ONCE. but you can call it as many times as you want.
+    function myFunctionWithParameter(name){ //this is a funciton definition with a PARAMETER.
+      console.log("My name is " + name);
+    }
+    myFunctionWithParameter("Michelle"); //this is a call of the function, and also giving it a certain parameter.
+    myFunctionWithParameter();
+
+------------------------------------------------------------------------------*/
+//simple things: primitives. complex things: objects.
+
+//variables defined by var keyword
+
+//boolean values = true or false
+  var myOnOff = true;
+  var salary = 10000;
+  var carPrice = 2500.99;
+
+  var emailAddress = "email@email.ca";
+  var sentence = "This is a sentence";
+  var taxes = 300;
+  console.log("My take home pay is " + salary - taxes);
+
+  console.log("a bunch of info " + salary + " and " + "also" + carPrice + "yay");
+
+var myConcatentation = "a bunch of info " + salary + " and " + "also" + carPrice + "yay";
+
+//doing the same thing but with a function:
+  function writeToConsole(myString){
+    console.log(myString);
+  }
+
+  writeToConsole(myConcatentation);
+
+
+
+
+
+  </script>
+
+</body>
+
 </html>
