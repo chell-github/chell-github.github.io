@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>social</title>
+    <title>dangan ronpas</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -17,72 +17,95 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-    .height{
-      height:100px;
-    }
-    .height2{
-      height:25px;
-    }
+<style>
+  .endHeight{
+    height: 100px;
+  }
+
+  .navHeight{
+  }
+
+  .mainHeight{
+    height: 500px;
+  }
+
+  .flex{ /*THIS IS THE PARENT CLASS THAT WILL ALLOW ITS CHILDREN TO CONFORM. flex always goes on the parent.*/
+    display: flex; /*you must define it as flex, otherwise it'll display as block*/
+    /*NEXT STEP: how will you want to center the item?*/
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flexSpaceBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .flexSpaceAround{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 
 
-    </style>
+  .verticalFlex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  li{
+    text-decoration: none;
+    list-style-type: none;
+    padding: 20px;
+    font-size: 18px;
+  }
+
+</style>
+
+
+
   </head>
   <body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 endHeight randomColor"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 navHeight randomColor">
+      <ul class="flexSpaceAround">
+        <li>games</li>
+        <li>characters</li>
+        <li>anime</li>
+        <li>manga</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 mainHeight randomColor"></div>
+    <div class="col-md-10 mainHeight randomColor"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 endHeight randomColor"></div>
+  </div>
+
+
+</div>
+
+
+
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 ">
-
-  </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-3 randomColor height"></div>
-    <div class="col-md-7 randomColor height">
-    </div>
-        <div class="col-md-2 randomColor height"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-3 randomColor height"></div>
-    <div class="col-md-7 randomColor height">
-      <div class="row">
-        <div class="col-md-3 randomColor height2"></div>
-        <div class="col-md-9 randomColor height2"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 randomColor height2"></div>
-        <div class="col-md-9 randomColor height2"></div>
-      </div>
-    </div>
-        <div class="col-md-2 randomColor height"></div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-3 randomColor height"></div>
-    <div class="col-md-7 randomColor height">
-      <div class="row">
-        <div class="col-md-3 randomColor height2"></div>
-        <div class="col-md-9 randomColor height2"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 randomColor height2"></div>
-        <div class="col-md-9 randomColor height2"></div>
-      </div>
-    </div>
-        <div class="col-md-2 randomColor height"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-12 randomColor height"></div>
-  </div>
-</div>
-
-
 
     <script type="text/javascript">
           //creating random colours
@@ -103,8 +126,5 @@
 
             })
           </script>
-
-
-
   </body>
 </html>

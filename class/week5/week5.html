@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week 5 JavaScript</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style>
+
+.height{
+  height: 100px;
+}
+
+</style>
+
+
+  </head>
+  <body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 randomColor height"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 randomColor height"></div>
+    <div class="col-md-8 height myConsole"></div>
+    <div class="col-md-2 randomColor height"></div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-12 randomColor"></div>
+  </div>
+
+</div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+          //creating random colours
+            $(document).ready(function() {
+              //get a random color between 0 and 255
+              function getRandomColor() {
+                //math.floor rounds it down
+                return Math.floor(Math.random() * 255);
+              }
+    //assign variable randomColor with ALL the elements with the class called .randomColor
+              var randomColor = $(".randomColor");
+
+    //loop through all the elements.
+    // for each randomColor
+              $.each(randomColor, function(index, item) {
+                $(this).css("background-color", "RGB(" + getRandomColor() + "," + getRandomColor() + "," + getRandomColor() + ")");
+              })
+
+            })
+          </script>
+
+
+<script>
+/*----------------------MAKING ARRAYS---------------------*/
+
+//DECLARING AN ARRAY:
+var firstArray = [];
+
+//add an element to an array:
+firstArray.push("element 1 ");
+firstArray.push(2);
+firstArray.push("third element");
+
+console.log("Hellow! " + firstArray);
+
+var tenArray = [0,1,2,3,4,5,6,7,8,9];
+
+console.log()
+
+//BUILT-IN ARRAY FUNCTIONS
+console.log("The number of elements in the array: " + tenArray.length);
+console.log("Display the array in a different way (with something else in between): " + tenArray.join("-"));
+
+//FOR LOOPS
+
+/*
+  i=0 --> the variable i will start at index 0.
+  i<numberArray.length --> the loop will keep going as long as i is less than the numberArray.length
+  i=i+1 --> the increment is 1.
+*/
+var numberArray = [0,1,2,3,4,5,6,7,8,9];
+var sum = 0;
+
+for (var i=0;i<numberArray.length;i=i+1){
+  console.log("The current index is " + i);
+
+numberArray[i];
+sum = sum + numberArray[i];
+}
+
+
+//my own loop
+
+var words = ["Hello!","My","name","is","Michelle!","How","are","you!"];
+var sentence = "";
+for (var a=0;a<words.length;a=a+1){
+
+sentence = sentence + words[a] + " ";
+console.log(sentence);
+}
+
+$(document).ready(function(){
+  $(".myConsole").html("the full sentence is" + sentence);
+$(".myConsole").append("here's another sentence");
+
+
+})
+
+
+
+</script>
+
+
+
+  </body>
+</html>
