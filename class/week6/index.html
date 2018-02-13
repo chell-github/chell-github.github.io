@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NEW JS - WEEK 6</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+
+    .height{
+      height: 100px;
+    }
+
+    .height2{
+      height: auto;
+    }
+
+    .flexSpaceAround{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    table{
+      background-color: #c6e29c;
+    }
+
+    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th{
+      background-color: #97ba64;
+    }
+
+    table > tbody > tr > th{
+      border-bottom-color: #5d7a33;
+    }
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 randomColor height"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2 randomColor height2"></div>
+        <div class="col-md-8 height2 myConsole">
+      
+        </div>
+        <div class="col-md-2 randomColor height2"></div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-12 height randomColor"></div>
+      </div>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+          //creating random colours
+            $(document).ready(function() {
+              //get a random color between 0 and 255
+              function getRandomColor() {
+                //math.floor rounds it down
+                return Math.floor(Math.random() * 255);
+              }
+    //assign variable randomColor with ALL the elements with the class called .randomColor
+              var randomColor = $(".randomColor");
+
+    //loop through all the elements.
+    // for each randomColor
+              $.each(randomColor, function(index, item) {
+                $(this).css("background-color", "RGB(" + getRandomColor() + "," + getRandomColor() + "," + getRandomColor() + ")");
+              })
+
+            })
+          </script>
+
+<script>
+//we want to
+//no semicolons after functions!!!
+$(document).ready(function(){
+
+function writeToCenter(str){
+  $(".myConsole").append(str); //jquery gets the element .myConsole and appends it to the str.
+}
+
+//writeToCenter("<h4>testing my console</h4>");
+
+function addNumbers(num1, num2){
+  var result = num1 + num2;
+  return result;
+}
+
+var firstNumber = 10;
+var secondNumber = 15;
+
+var thirdNumber = addNumbers(firstNumber, secondNumber);
+
+function writeObjectToCenter(obj){
+  $(".myConsole").append(JSON.stringify + (obj)); //.stringify changes the object to a string
+}
+
+//NOTES: KEYS DO NOT HAVE AN ORDER. do have things in an "order", it must be an array.
+var myDangan = {
+"hair colour":"purple",
+"height":"short",
+"animation":"running",
+"liar":true, //they can be boolean values!
+"talent":"supreme leader"
+};
+//console log doesn't recognize objects
+//you can also add keys like this:
+myDangan.status = "dead";
+
+writeObjectToCenter(myDangan);
+
+
+for(var key in myDangan){ //this will cycle through the keys in the object
+  writeToCenter("This key is: " + key + " and the value is " + myDangan[key] + "<br />");
+} //^^^this is using a variable
+
+  writeToCenter("Here is the value: " + myDangan["height"]);
+//^^^^^here you're referencing it directly
+
+  writeToCenter("Here is the value: " + myDangan.height);
+//the CONVENTIONAL way to reference keys is ^^^^^^ this is called "dot notation"
+//console is just an object that has FUNCTIONS for VALUES. (instead of primitive values)
+
+
+
+})
+
+
+</script>
+
+  </body>
+</html>

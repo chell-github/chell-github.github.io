@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widtd=device-width, initial-scale=1">
+    <title>TABLES</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Lato');
+
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+p{
+  font-size:17px;
+  display:inline;
+}
+
+a{
+  text-decoration: none;
+
+}
+
+h1{
+  font-size: 18px;
+}
+
+a:hover{
+  text-decoration: none;
+}
+    .height{
+      height: auto;
+    }
+
+    #logo{
+      width: 50%;
+    }
+
+    .height2{
+      height: auto;
+    }
+
+    .flexSpaceAround{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+      .flex{ /*THIS IS THE PARENT CLASS THAT WILL ALLOW ITS CHILDREN TO CONFORM. flex always goes on the parent.*/
+        display: flex; /*you must define it as flex, otherwise it'll display as block*/
+        /*NEXT STEP: how will you want to center the item?*/
+        justify-content: center;
+        align-items: center;
+      }
+
+      .verticalFlex{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+      }
+
+.main{
+  padding: 30px;
+  padding-top:40px;
+}
+
+table, table thead tr th{
+  text-align: center;
+}
+
+th{
+  text-transform: uppercase;
+}
+    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th{
+      background-color: #cee4ed;
+    }
+
+    table > tbody > tr{
+      border-bottom-color: #5d7a33;
+    }
+
+    .nav p{
+      opacity: 0;
+      background-color: white;
+      text-align: center;
+      vertical-align: middle;
+      transition: all 0.3s ease 0s;
+        color: #cee4ed;
+    }
+
+    .nav:hover p{
+      opacity: 1;
+      transition: all 0.3s ease 0s;
+    }
+
+    .nav img{
+      width: 80px;
+    }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 randomColor height flexSpaceAround">
+          <img id="logo" src="botw-logo.png" alt="Breath of the Wild Logo." />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2 randomColor height2 ">
+          <h1>~NAVIGATION~</h1>
+          <a href="#"><div class="nav"><img src="green-rupee.png" alt="Rupee" /><p>TLOZ</p></div></a>
+          <a href="#"><div class="nav"><img src="blue-rupee.png" alt="Rupee" /><p>OOT</p></div></a>
+          <a href="#"><div class="nav"><img src="red-rupee.png" alt="Rupee" /><p>MM</p></div></a>
+          <a href="#"><div class="nav"><img src="purple-rupee.png" alt="Rupee" /><p>PH</p></div></a>
+          <a href="#"><div class="nav"><img src="silver-rupee.png" alt="Rupee" /><p>TWW</p></div></a>
+          <a href="#"><div class="nav"><img src="gold-rupee.png" alt="Rupee" /><p>TP</p></div></a>
+
+
+
+        </div>
+        <div class="col-md-8 height2 main flex">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>rank</th>
+                <th>player</th>
+                <th>country</th>
+                <th>time</th>
+                <th>platform</th>
+              </tr>
+            </thead>
+          <tbody>
+
+            <tr>
+              <td>1</td>
+              <td>Wolhaiksong</td>
+              <td>🇨🇱</td>
+              <td>40:48</td>
+              <td>Wii U</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>sva</td>
+              <td>🇯🇵</td>
+              <td>41:58</td>
+              <td>Wii U</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>rasenurns</td>
+              <td>🇺🇸</td>
+              <td>41:22</td>
+              <td>Wii U</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Zdi</td>
+              <td>🇯🇵</td>
+              <td>41:42</td>
+              <td>Switch</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Puppet</td>
+              <td>🇺🇸</td>
+              <td>41:35</td>
+              <td>Switch</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>NobleTOFU</td>
+              <td>🇺🇸</td>
+              <td>42:23</td>
+              <td>Switch</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>LouLouCore</td>
+              <td>🇨🇦</td>
+              <td>42:32</td>
+              <td>Switch</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Vett77</td>
+              <td>🇺🇸</td>
+              <td>42:37</td>
+              <td>Wii U</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Demon9</td>
+              <td>🇸🇪</td>
+              <td>43:08</td>
+              <td>Switch</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Samura1man</td>
+              <td>🇫🇮</td>
+              <td>43:08</td>
+              <td>Switch</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>ggkota</td>
+              <td>🇫🇷</td>
+              <td>43:22</td>
+              <td>Switch</td>
+            </tr>
+          </tbody>
+          </table>
+
+
+
+
+        </div>
+        <div class="col-md-2 randomColor height2"></div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-12 height randomColor"></div>
+      </div>
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>
