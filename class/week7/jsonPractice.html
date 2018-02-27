@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JSON PRACTICE</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+  <style>
+  .output{
+    text-align: center;
+    margin: 10px;
+  }
+
+    .images {
+      float: left;
+      height: 300px;
+      width: 300px;
+    }
+
+    .flexSpaceAround {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .flex {
+      /*THIS IS THE PARENT CLASS THAT WILL ALLOW ITS CHILDREN TO CONFORM. flex always goes on the parent.*/
+      display: flex;
+      /*you must define it as flex, otherwise it'll display as block*/
+      /*NEXT STEP: how will you want to center the item?*/
+      justify-content: center;
+      align-items: center;
+    }
+
+    .verticalFlex {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .header {
+      padding: 20px;
+    }
+
+    ul li{
+      list-style-type: none;
+      text-align: center;
+      margin-left: -30px;
+    }
+
+    .footer{
+      text-align: center;
+      background-color: #1c1c1c;
+      height: auto;
+      color: white;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 flexSpaceAround header"> <img src="danganronpa.png" alt="danganronpa logo" /></div>
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10 output"></div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 footer"></div>
+    </div>
+  </div>
+
+
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+  <script type="text/javascript">
+    //creating random colours
+    $(document).ready(function() {
+      //get a random color between 0 and 255
+      function getRandomColor() {
+        //math.floor rounds it down
+        return Math.floor(Math.random() * 255);
+      }
+      //assign variable randomColor with ALL the elements with the class called .randomColor
+      var randomColor = $(".randomColor");
+
+      //loop through all the elements.
+      // for each randomColor
+      $.each(randomColor, function(index, item) {
+        $(this).css("background-color", "RGB(" + getRandomColor() + "," + getRandomColor() + "," + getRandomColor() + ")");
+      })
+
+    })
+  </script>
+
+
+  <script>
+    var charas = [{
+        "imgUrl": "../week4/images/celestia.gif",
+        "name": "Celestia Ludenberg",
+        "talent": "Gambler",
+        "game": "Danganronpa",
+        "status": "dead",
+      },
+
+      {
+        "imgUrl": "../week4/images/gonta.gif",
+        "name": "Gonta Gokuhara",
+        "talent": "Entomologist",
+        "game": "Danganronpa V3",
+        "status": "dead",
+      },
+
+      {
+        "imgUrl": "../week4/images/ibuki.gif",
+        "name": "Ibuki Mioda",
+        "talent": "Musician",
+        "game": "Super Danganronpa 2",
+        "status": "dead",
+      },
+
+      {
+        "imgUrl": "../week4/images/shuichi.gif",
+        "name": "Shuuichi Saihara",
+        "talent": "Detective",
+        "game": "Danganronpa V3",
+        "status": "alive",
+
+      },
+      {
+        "imgUrl": "../week4/images/hinata.gif",
+        "name": "Hinata Hajime",
+        "talent": "???",
+        "game": "Super Danganronpa 2",
+        "status": "alive",
+      },
+
+      {
+        "imgUrl": "../week4/images/korekiyo.gif",
+        "name": "Korekiyo Shinguuji",
+        "talent": "Anthropologist",
+        "game": "Danganronpa V3",
+        "status": "dead",
+      }
+
+    ];
+
+    $(document).ready(function() {
+      /*var html = "<table class='table table-striped table-hover'>" +
+"<tr>" +
+"<th>sprite</th>" +
+"<th>name</th>" +
+"<th>talent</th>" +
+"<th>game</th>" +
+"<th>status</th>" +
+"</tr>";*/
+
+      var html = "";
+
+
+      for (var i = 0; i < charas.length; i++) {
+        html += "<div class='images verticalFlex'>" +
+          "<h2>" + charas[i].name + "</h2>" +
+          "<img src='" + charas[i].imgUrl + "'/>" +
+          "<ul>" +
+          "<li> Talent: " + charas[i].talent + "</li>" +
+          "<li> Game: " + charas[i].game + "</li>" +
+          "<li> Status: " + charas[i].status + "</li>" +
+          "</ul>" +
+          "</div>";
+      }
+
+      var footer = "<div footer flexSpaceAround>" +
+        "<p> &#8592; PREVIOUS PAGE</p>" +
+        "<p>NEXT PAGE &#8594;</p>" +
+        "</div>";
+
+
+      $(".output").html(html);
+      $(".footer").html(footer);
+    });
+  </script>
+
+
+
+
+
+</body>
+
+</html>
