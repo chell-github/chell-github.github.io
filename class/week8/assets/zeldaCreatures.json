@@ -1,0 +1,46 @@
+[{
+    "name": "Link",
+    "race": "Hylian",
+    "colour": "green",
+    "game": "Legend of Zelda",
+    "region": "Hyrule",
+    "side": "good"
+  },
+
+  {
+    "name": "Zelda",
+    "race": "Hylian",
+    "colour": "purple",
+    "game": "Legend of Zelda",
+    "region": "Hyrule",
+    "side": "good"
+  },
+
+  {
+    "name": "Ganondorf",
+    "race": "Gerudo",
+    "colour": "red",
+    "game": "Legend of Zelda",
+    "region": "Hyrule",
+    "side": "evil"
+  },
+
+  {
+    "name": "Ghirahim",
+    "race": "Sword Spirit",
+    "colour": "grey",
+    "game": "Skyward Sword",
+    "region": "Hyrule",
+    "side": "evil"
+  },
+
+  {
+    "name": "Ravio",
+    "race": "Lorulian",
+    "colour": "purple",
+    "game": "A Link Between Worlds",
+    "region": "Lorule",
+    "side": "good"
+  }
+
+]
