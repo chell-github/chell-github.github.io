@@ -17,36 +17,50 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
+<style>
+  #carousel-example-generic{
+    width: 900px;
+  }
 
-    .container{
-      width: 80%;
-      text-align: center;
+  .carousel-inner img{
+    width: 100%;
+  }
 
-      list-style-type: none;
-    }
-ul li{
+  .carousel-inner{
+    overflow: hidden;
+  }
 
-  list-style-type: none;
-}
-    img{
-      width: 250px;
-    }
+</style>
 
-    .other{
-      margin: 120px;
-    }
-
-    </style>
   </head>
   <body>
 
-<div class="container">
+    <div class="container">
+      <div class="row">
+        <h1>Kathryn's JSON information</h1>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
 
-      <div class="update">
-      </div>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
 
-      <div class="other">
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        </div>
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -54,51 +68,23 @@ ul li{
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-
-    <script>
-  var url ="https://chell-github.github.io/class/week8/assets/zeldaCreatures.json"
-  $.getJSON(url).done(function(info){ //the information that comes back from the url goes into a variable called data
-        console.log("success!!!!!!");
-        console.dir(info);
-  var jsonWrite = "";
-      for (var i = 0; i < info.length; i++) { //going through the array yeaaaah!!!!
-        jsonWrite += '<ul><li><h1>' + info[i].name + '</h1></li>' +
-          '<li>' + info[i].race + '</li>' +
-          '<li>' + info[i].colour + '</li>' +
-          '<li>' + info[i].game + '</li>' +
-          '<li>' + info[i].region + '</li>' +
-          '<li>' + info[i].side + '</li>' +
-          '</ul>';
-      }
-      console.log(jsonWrite);
-
-      $(document).ready(function(){
-        $(".update").html(jsonWrite); //pasting the var slidesHtml content into the .carousel-inner class in html.
-        });
-    }).fail(function(info){
-      console.log("failure...." + JSON.stringify(info));
-    }); //when it's finished, we call the function
-    </script>
-
     <script>
   var url ="https://katnjo.github.io/class/week8/assets/carousel.json"
   $.getJSON(url).done(function(info){ //the information that comes back from the url goes into a variable called data
         console.log("success!!!!!!");
         console.dir(info);
-  var jsonWrite = "<h1>Kathryn's JSON information</h1>";
+  var jsonWrite = "";
       for (var i = 0; i < info.length; i++) { //going through the array yeaaaah!!!!
         jsonWrite += '<div class="' + info[i].class + '">' +
-          '<img src="' + info[i].source + '"' +
-          'alt="' + info[i].alternate + '" />' +
-          '<li>' + info[i].title + '</li>' +
-          '<li>' + info[i].description + '</li>' +
-          '</ul>' +
-          '</div>';
+            '<img src="' + info[i].source + '"alt="' + info[i].alt + '">' +
+            '<div class="carousel-caption"> <h1>' + info[i].title + '</h1>' + info[i].description + '</div>' +
+            '</div>';
       }
       console.log(jsonWrite);
 
       $(document).ready(function(){
-        $(".other").html(jsonWrite); //pasting the var slidesHtml content into the .carousel-inner class in html.
+        $(".carousel-inner").html(jsonWrite);
+        $(".carousel").carousel();
         });
     }).fail(function(info){
       console.log("failure...." + JSON.stringify(info));
