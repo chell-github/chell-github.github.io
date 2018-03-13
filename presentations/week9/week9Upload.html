@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> One Page Design </title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style media="screen">
+    @import url('https://fonts.googleapis.com/css?family=Righteous');
+      body{
+        max-width: 100%;
+        padding: 10px;
+
+        background-color: #f9f9f5;
+        font-family: Righteous, sans-serif;
+      }
+      h1{
+        text-align: center;
+        font-size: 70px;
+      }
+      img{
+        margin-left: -10px;
+        width: 100%;
+        display: block;
+      }
+
+      .flexSpaceAround{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      ul li{
+        list-style-type: none;
+        font-size: 25px;
+      }
+
+      a{
+        color: #f3d42a;
+         transition:0.5s ease-in-out;
+         text-decoration: none;
+      }
+
+      a:hover{
+        color: #111111;
+        text-decoration: none;
+      }
+
+      h2{
+        position:absolute;
+        right:5px;
+        font-size: 20px;
+      }
+
+.main{
+  margin-top: 80px;
+}
+
+
+    </style>
+</head>
+<body>
+
+<header>
+  <h1 id="top"> Michelle's Diner Menu</h1>
+</header>
+
+<nav>
+  <ul class="flexSpaceAround">
+    <li><a href="#appetizers"> Appetizers </a></li>
+    <li><a href="#soups-salads"> Soups & Salads </a></li>
+    <li><a href="#mains"> Mains</a></li>
+    <li><a href="#sides"> Sides </a></li>
+    <li><a href="#beverages"> Beverages</a></li>
+    <li><a href="#desserts"> Desserts</a></li>
+  </ul>
+</nav>
+
+<div class="main">
+  <!-- Insert Appetizers PNG Mock up Here -->
+  <img src="appetizers.png" alt="Appetizers menu." id="appetizers">
+  <h2><a href="#top">&#9650;back to top.</a></h2>
+  <!-- Insert Soups and Salads PNG Mock up Here -->
+  <img src="soupssalads.png" alt="Soups and Salads menu." id="soups-salads">
+<h2><a href="#top">&#9650;back to top.</a></h2>
+
+  <!-- Insert Mains PNG Mock up Here -->
+  <img src="mains.png" alt="Main Dishes menu." id="mains">
+<h2><a href="#top">&#9650;back to top.</a></h2>
+
+  <!-- Insert Sides PNG Mock up Here -->
+  <img src="sides.png" alt="Sides menu." id="sides">
+<h2><a href="#top">&#9650;back to top.</a></h2>
+
+  <!-- Insert Beverages PNG Mock up Here -->
+  <img src="beverages.png" alt="Beverages menu." id="beverages">
+<h2><a href="#top">&#9650;back to top.</a></h2>
+
+  <!-- Insert Desserts PNG Mock up Here -->
+  <img src="desserts.png" alt="Desserts menu" id="desserts">
+
+
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 1500, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+    </script>
+  </body>
+</html>
