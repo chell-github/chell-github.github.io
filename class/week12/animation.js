@@ -160,12 +160,101 @@ var spriteImages = [{
   },
 
   {
-    "spriteMapUrl": "images/masae.png",
+    "spriteMapUrl": "https://chell-github.github.io/class/week12/images/masae.png",
     "numFrames": 29,
     "width": 2900,
     "height": 100,
-    "name": "cat"
-  }
+    "name": "masae"
+  },
+
+  {
+"spriteMapUrl":"https://sarahellul.github.io/class/week12/animation/images/stitch3.png",
+  "numFrames": 8,
+  "width": 1928,
+  "height": 240,
+  "name": "stitch"
+ },
+
+{
+   "spriteMapUrl": "https://celiafosch.github.io/class/week12/animation/images/henry.png",
+   "numFrames": 5,
+   "width": 480,
+   "height": 480,
+   "name": "Henry"
+ },
+
+
+ {
+   "spriteMapUrl": "https://loucasl.github.io/class/week12/animation/images/ari.png",
+   "numFrames": 7,
+   "width": 3134,
+   "height": 422,
+   "name": "ari"
+ },
+
+
+
+{
+   "spriteMapUrl":"https://biancabottos.github.io/class/week12/animation/images/sun.png",
+   "numFrames": 2,
+   "width": 500,
+   "height": 100,
+   "name": "sun"
+ },
+{
+   "spriteMapUrl": "https://julianneferr.github.io/class/week12/animation/images/lightbulb.png",
+   "numFrames": 7,
+   "width": 1000,
+   "height": 200,
+   "name": "lightbulb"
+ },
+{
+   "spriteMapUrl": "https://sluu01.github.io/class/week12/animation/images/iceCream2.png",
+   "numFrames": 5,
+   "width": 2500,
+   "height": 1259,
+   "name": "dessert"
+ },
+
+{
+   "spriteMapUrl": "https://amiraarshad.github.io/class/week12/animation/images/liam.png",
+   "numFrames": 7,
+   "width": 2732,
+   "height":1417,
+   "name": "liam"
+ },
+{
+   "spriteMapUrl":"https://asukalap.github.io/class/week12/animation/images/heartbeat.png",
+   "numFrames": 10,
+   "width": 1000,
+   "height": 100,
+   "name": "heartbeat"
+ },
+
+{
+   "spriteMapUrl":"https://kiannagram.github.io/class/week12/animation/images/ARTZU.png",
+   "numFrames": 7,
+   "width": 2100,
+   "height": 694,
+   "name": "colour goat"
+ },
+
+{
+   "spriteMapUrl":"https://bill-curne.github.io/class/animation/images/heisenberg.png",
+   "numFrames": 10,
+   "width": 1300,
+   "height": 130,
+   "name": "heisenberg"
+ },
+
+{
+   "spriteMapUrl": "https://chell-github.github.io/class/week12/images/masae.png",
+   "numFrames": 29,
+   "width": 2900,
+   "height": 100,
+   "name": "masae"
+ }
+
 ];
 var animations = []; //an array to hold the currently existing sprite obects
 var maxAnimations = 9; //spriteImages.length; how many animations we want on the screen at any one time
